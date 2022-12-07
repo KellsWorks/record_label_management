@@ -7,9 +7,9 @@ from django.dispatch import receiver
 class User(AbstractUser):
     class Role(models.TextChoices):
         ADMIN = "ADMIN", "Admin"
-        EXECUTIVE = "EXECUTIVE", "executive"
+        EXECUTIVE = "EXECUTIVE", "Executive"
         MANAGER = "MANAGER", "Manager"
-        ARTIST = "ARTIST", "artist"
+        ARTIST = "ARTIST", "Artist"
 
     base_role = Role.ADMIN
 

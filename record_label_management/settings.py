@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-a!l*4dx$po=)s1+i#&fz-i68%a1ebknik1qa@1q#iec4ba$v4y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'https://record-label-management.up.railway.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

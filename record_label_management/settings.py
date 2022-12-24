@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'content',
     'event',
     'schedule',
+    'promotion'
 ]
 
 MIDDLEWARE = [

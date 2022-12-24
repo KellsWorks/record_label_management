@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',    
     'user',
+    'artist',
     'content',
     'event',
     'schedule',

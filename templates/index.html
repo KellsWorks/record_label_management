@@ -29,7 +29,7 @@
         </ul>
       </nav>
       <div class="hidden lg:block">
-        <button class="mx-1 hover:underline p-4">Already a member? Login</button>
+        <a href="/admin/" class="mx-1 hover:underline p-4">Already a member? Login</a>
         <button
           class="p-4 bg-slate-900 hover:bg-slate-700 hover:cursor-pointer text-white font-medium rounded mx-1"
         >
@@ -127,7 +127,7 @@
     </header>
     <!-- hero -->
     <section
-      class="py-8 px-4 md:px-8 lg:py-16 2xl:py-40 2xl:px-60 mx-auto grid grid-cols-1 gap-8 lg:grid-cols-12 relative"
+      class="py-20 px-4 md:px-8 2xl:px-60 mx-auto grid grid-cols-1 gap-8 lg:grid-cols-12 relative"
     >
       <div class="col-span-6 xl:place-self-center mb-8 mt-8 xl:mt-0 lg:mb-0">
         <h1
@@ -166,9 +166,9 @@
           </button>
         </div>
       </div>
-      <div class="col-span-6 relative">
+      <div class="col-span-6 relative pb-10">
         <img
-          class="hidden xl:block absolute z-0 right-[9px] top-[13px]"
+          class=""
           src="https://www.seekpng.com/png/detail/340-3403859_music-headphone-free-png-image-music.png"
           alt=""
         />
@@ -176,44 +176,66 @@
     </section>
     <!-- benefits -->
     <section
-      class="py-8 px-4 md:px-8 lg:py-16 2xl:py-40 2xl:px-60 2xl:py-20 mx-auto grid gap-y-4 gap-x-8 grid-cols-11 relative bg-gray-100"
+      class="py-8 px-4 md:px-8 lg:py-16 2xl:py-40 2xl:px-60 2xl:py-20 mx-auto grid items-center gap-y-4 gap-x-8 grid-cols-11 relative bg-gray-100"
     >
       <h2 class="text-3xl md:text-4xl font-medium text-center col-span-11">
-        Some features that set <br />
-        Tailland apart from others
+        Our features <br />
       </h2>
       <p class="max-w-lg mx-auto text-center col-span-11 leading-relaxed mb-8">
-        Tailland has some unique values, it allows you to create landing pages
-        quickly and with ease, or mix and match different templates as you like
+        Our record label management system is designed to help you efficiently manage every aspect of your label. With our cutting-edge technology, you can
       </p>
       <div
         class="border border-slate-200 rounded-lg lg:col-span-3 col-span-11 lg:col-start-2 p-8 text-center lg:text-left bg-white"
       >
-        <img class="w-12 mx-auto lg:mx-0" src="./assets/icon_bulb.svg" alt="" />
-        <h3 class="text-xl font-medium my-4">Innovative Solution</h3>
+        <ion-icon name="musical-notes" class="text-green-500 ion-icon"></ion-icon>
+        <h3 class="text-xl font-medium my-4">Artist</h3>
         <small
-          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
-          nostrum, quaerat blanditiis architecto.</small
+          >Keep track of all your artists, their releases, and their schedules with a centralized artist management system.</small
         >
       </div>
       <div
         class="border border-slate-200 rounded-lg lg:col-span-3 col-span-11 p-8 text-center lg:text-left bg-white"
       >
-        <img class="w-12 mx-auto lg:mx-0" src="./assets/icon_db.svg" alt="" />
-        <h3 class="text-xl font-medium my-4">Fully functional</h3>
+        <ion-icon name="radio" class="text-green-500 ion-icon"></ion-icon>
+        <h3 class="text-xl font-medium my-4">Release</h3>
         <small
-          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
-          nostrum, quaerat blanditiis architecto.</small
+          >Easily manage the release process for your albums, singles, and videos with our streamlined release management system.</small
         >
       </div>
       <div
         class="border border-slate-200 rounded-lg lg:col-span-3 col-span-11 p-8 text-center lg:text-left bg-white"
       >
-        <img class="w-12 mx-auto lg:mx-0" src="./assets/icon_lock.svg" alt="" />
-        <h3 class="text-xl font-medium my-4">Secure Database</h3>
+        <ion-icon name="shapes" class="text-green-500 ion-icon"></ion-icon>
+        <h3 class="text-xl font-medium my-4">Contract</h3>
         <small
-          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
-          nostrum, quaerat blanditiis architecto.</small
+          >Store and manage all of your contracts in one secure location with our contract management system.</small
+        >
+      </div>
+      <div
+        class="border border-slate-200 rounded-lg lg:col-span-3 col-span-11 lg:col-start-2 p-8 text-center lg:text-left bg-white"
+      >
+        <ion-icon name="card" class="text-green-500 ion-icon"></ion-icon>
+        <h3 class="text-xl font-medium my-4">Financial</h3>
+        <small
+          >Track your financials, generate reports, and stay on top of your budget with our financial management system.</small
+        >
+      </div>
+      <div
+        class="border border-slate-200 rounded-lg lg:col-span-3 col-span-11 p-8 text-center lg:text-left bg-white"
+      >
+        <ion-icon name="storefront" class="text-green-500 ion-icon"></ion-icon>
+        <h3 class="text-xl font-medium my-4">Marketing & Promotion</h3>
+        <small
+          >Get your music to the right people at the right time with our powerful marketing and promotion tools.</small
+        >
+      </div>
+      <div
+        class="border border-slate-200 rounded-lg lg:col-span-3 col-span-11 p-8 text-center lg:text-left bg-white"
+      >
+        <ion-icon name="people" class="text-green-500 ion-icon"></ion-icon>
+        <h3 class="text-xl font-medium my-4">Collaboration</h3>
+        <small
+          >Connect with your team, artists, and stakeholders in real-time with our collaboration and communication tools.</small
         >
       </div>
     </section>
@@ -363,8 +385,8 @@
       </div>
       <div class="col-span-6 xl:place-self-center mb-8 mt-8 xl:mt-0 lg:mb-0">
         <h2 class="text-3xl xl:text-4xl font-medium text-center lg:text-left">
-          Organize your web app <br />
-          easily with Tailland
+          Organize your music catalogues <br />
+          easily with us
         </h2>
         <p class="my-8 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis iste

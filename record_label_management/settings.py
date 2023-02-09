@@ -76,11 +76,14 @@ WSGI_APPLICATION = 'record_label_management.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': '8uUjNBtcZUQWrXvuQHre',
+        'HOST': 'containers-us-west-191.railway.app',
+        'PORT': '6663',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

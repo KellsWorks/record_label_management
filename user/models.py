@@ -1,81 +1,25 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
-from django.contrib.auth.models import AbstractUser, BaseUserManager
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
 
 class User(AbstractUser):
-    class Role(models.TextChoices):
-        ADMIN = "ADMIN", "Admin"
-        EXECUTIVE = "EXECUTIVE", "Executive"
-        MANAGER = "MANAGER", "Manager"
-        ARTIST = "ARTIST", "Artist"
+    ROLES = (
+        ('admin', 'Admin'),
+        ('artist', 'artists'),
+        ('manager', 'manager'),
+    )
 
-    base_role = Role.ADMIN
+    username = models.CharField(max_length=255, unique=True)
+    password = models.CharField(max_length=255)
+    email = models.EmailField(unique=True)
+    role = models.CharField(max_length=20, choices=ROLES, default='admin')
 
-    role = models.CharField(max_length=50, choices=Role.choices)
-
-    def save(self, *args, **kwargs):
-        if not self.pk:
-            self.role = self.base_role
-            return super().save(*args, **kwargs)
-
-
-class ArtistManager(BaseUserManager):
-    def get_queryset(self, *args, **kwargs):
-        results = super().get_queryset(*args, **kwargs)
-        return results.filter(role=User.Role.ARTIST)
+    def __str__(self):
+        return self.username
 
 
-class Student(User):
-
-    base_role = User.Role.ARTIST
-
-    artist = ArtistManager()
-
-    class Meta:
-        proxy = True
-
-    def welcome(self):
-        return "Only for artists"
-
-
-@receiver(post_save, sender=Student)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created and instance.role == "ARTIST":
-        ArtistProfile.objects.create(user=instance)
-
-
-class ArtistProfile(models.Model):
+class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    student_id = models.IntegerField(null=True, blank=True)
 
-
-class ManagerManager(BaseUserManager):
-    def get_queryset(self, *args, **kwargs):
-        results = super().get_queryset(*args, **kwargs)
-        return results.filter(role=User.Role.TEACHER)
-
-
-class Manager(User):
-
-    base_role = User.Role.MANAGER
-
-    teacher = ManagerManager()
-
-    class Meta:
-        proxy = True
-
-    def welcome(self):
-        return "Only for managers"
-
-
-class ManagerProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    teacher_id = models.IntegerField(null=True, blank=True)
-
-
-@receiver(post_save, sender=Manager)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created and instance.role == "MANAGER":
-        ManagerProfile.objects.create(user=instance)
+    def __str__(self):
+        return self.user.username

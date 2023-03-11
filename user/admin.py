@@ -1,5 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from django.http import HttpResponse
+
 from user.models import User, Profile
 
 
@@ -24,5 +26,17 @@ class UserProfileAdmin(admin.ModelAdmin):
         obj.user = request.user
         super().save_model(request, obj, form, change)
 
+
+# def generate_report(modeladmin, request, queryset):
+#     # Retrieve data
+#     # Format data
+#     # Create response
+#     response = HttpResponse(report_data, content_type='text/csv')
+#     response['Content-Disposition'] = 'attachment; filename="report.csv"'
+#
+#     return response
+#
+#
+# generate_report.short_description = "Generate report for selected user and associated models"
 
 admin.site.register(Profile, UserProfileAdmin)

@@ -1,9 +1,11 @@
 from django.db import models
+from reports.base import ModelReport
+
 from content.models import Genre
 from user.models import User
 
-class Artist(models.Model):
 
+class Artist(models.Model):
     class GENDER_CHOICES(models.TextChoices):
         MALE = 'MALE', 'Male'
         FEMALE = 'FEMALE', 'Female'
@@ -20,8 +22,11 @@ class Artist(models.Model):
     twitter_handle = models.CharField(max_length=255, null=True)
     tiktok_handle = models.CharField(max_length=255, null=True)
 
-
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'${self.account.first_name} ${self.account.last_name}'
+
+
+class ArtistReport(ModelReport):
+    name = "Report - Artist Report"

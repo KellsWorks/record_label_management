@@ -2,8 +2,8 @@ from django.db import models
 
 from user.models import User
 
-class Event(models.Model):
 
+class Event(models.Model):
     title = models.CharField(max_length=255, null=False)
     location = models.CharField(max_length=255, null=False)
     artist = models.ManyToManyField(User, related_name="artist")

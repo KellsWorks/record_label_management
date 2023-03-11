@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     'event',
     'schedule',
     'promotion',
-    'landing'
+    'landing',
+    'reports'
 ]
 
 MIDDLEWARE = [
